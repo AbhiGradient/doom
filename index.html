@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HELLBREACH: INFERNAL PROTOCOL</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<div id="hud" hidden>
+  <div id="dmg"></div><div id="cross"></div><div id="hitm"></div>
+  <div id="obj"></div><div id="time"></div><div id="kills"></div><div id="note"></div>
+  <div id="vitals">
+    <div class="lab">HEALTH <b id="hpn"></b></div><div class="bar"><i id="hpb"></i></div>
+    <div class="lab">ARMOR <b id="arn"></b></div><div class="bar a"><i id="arb"></i></div>
+  </div>
+  <div id="wp"><span id="wn"></span><b id="am"></b></div>
+</div>
+<section id="nogl" class="panel" hidden><h2>WebGL unavailable</h2><p>This game needs a browser with WebGL enabled.</p></section>
+<section id="menu" class="panel">
+  <h1>HELLBREACH</h1><h2>INFERNAL PROTOCOL</h2>
+  <p class="tag">THE GATES ARE OPEN. YOU KNOW WHAT TO DO.</p>
+  <nav><button id="b-start">START GAME</button><button id="b-set">SETTINGS</button><button id="b-ctl">CONTROLS</button><button id="b-abt">ABOUT</button></nav>
+  <small>v1.0.0 · Keyboard &amp; mouse required · Mission 01: The Ashen Facility</small>
+</section>
+<section id="settings" class="panel" hidden>
+  <h2>SETTINGS</h2>
+  <label>Master volume <input id="s-vol" type="range" min="0" max="1" step=".05"></label>
+  <label>Mouse sensitivity <input id="s-sens" type="range" min=".3" max="2.5" step=".1"></label>
+  <label>Field of view <input id="s-fov" type="range" min="60" max="100" step="1"></label>
+  <label>Graphics quality <select id="s-q"><option value="0">Low</option><option value="1">Medium</option><option value="2">High</option></select></label>
+  <label>Invert Y axis <input id="s-inv" type="checkbox"></label>
+  <nav><button id="s-full">FULLSCREEN</button><button id="s-reset">RESET</button><button class="back">BACK</button></nav>
+</section>
+<section id="controls" class="panel" hidden>
+  <h2>CONTROLS</h2>
+  <table><tr><td>W A S D</td><td>Move</td></tr><tr><td>Mouse</td><td>Look</td></tr><tr><td>Left click</td><td>Fire</td></tr><tr><td>Space</td><td>Jump</td></tr><tr><td>Shift</td><td>Sprint</td></tr><tr><td>1 / 2 / 3</td><td>Pistol / Shotgun / Plasma</td></tr><tr><td>R</td><td>Reload pistol</td></tr><tr><td>E</td><td>Open door</td></tr><tr><td>Esc</td><td>Pause</td></tr></table>
+  <nav><button class="back">BACK</button></nav>
+</section>
+<section id="about" class="panel" hidden>
+  <h2>ABOUT</h2>
+  <p>An original browser FPS built with Three.js and the Web Audio API. Every texture and sound is generated procedurally. Runs entirely client-side.</p>
+  <nav><button class="back">BACK</button></nav>
+</section>
+<section id="pause" class="panel" hidden>
+  <h2>PAUSED</h2><p id="p-msg"></p>
+  <nav><button id="p-resume">RESUME</button><button id="p-restart">RESTART MISSION</button><button id="p-set">SETTINGS</button><button id="p-menu">MAIN MENU</button></nav>
+</section>
+<section id="over" class="panel" hidden>
+  <h1 class="dead">YOU DIED</h1><p id="o-stats"></p>
+  <nav><button id="o-restart">RESTART MISSION</button><button id="o-menu">MAIN MENU</button></nav>
+</section>
+<section id="win" class="panel" hidden>
+  <h1 class="won">MISSION COMPLETE</h1><p id="w-stats"></p>
+  <nav><button id="w-restart">RESTART MISSION</button><button id="w-menu">MAIN MENU</button></nav>
+</section>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
